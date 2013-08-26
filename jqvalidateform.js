@@ -20,7 +20,7 @@
         //sur le submit
         $(this).submit(function() {    
             var returnbool = true;
-            //on delete tous les avertissements pr�ced�nts
+            //on delete tous les avertissements précedents
             $($('#'+$(this).attr('id')+'>span[rel="messageforrequire"]')).remove();
             var arr_chekradio = new Array();
             //message d'alerte qui apparait au submit
