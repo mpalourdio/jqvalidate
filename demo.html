@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>This is an example page</title>
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<link rel="stylesheet" href="jqvalidateform.css" type="text/css" />
+<script src="jqvalidateform.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+   $("#formtest").jqvalidateform({
+     messageforrequire : "omgwtfbbq!" // optionnal message
+   });
+});
+
+</script>
+<title></title>
+</head>
+
+<body>
+<form method="post" id="formtest">
+<label for="text" rel="req">input text</label><input name="text" id="text" type="text" class="req" value="" /><br />
+<label for="password" rel="req">input password</label><input name="password" id="password" type="password" class="req" value="" /><br />
+
+<label rel="req">checkbox</label>
+<label for="checkbox1">yes </label><input type="checkbox" id="checkbox1" name="checkbox[]" value="1" class="req"/>
+<label for="checkbox2">no </label><input type="checkbox" id="checkbox2" name="checkbox[]" value="2" class="req"/> <br />
+
+<label rel="req">radio</label>
+<label for="radio1">subscribe</label><input name="radio" id="radio1" type="radio" value="1" class="req" />
+<label for="radio2">unsubscribe</label><input name="radio" id="radio2" type="radio" value="2" class="req" /><br />
+
+<label for="textarea" rel="req">textarea</label>
+<textarea cols="20" rows="10" name="textarea" id="textarea" class="req">
+</textarea><br />
+<!-- First option is considered as non being selected by the user -->
+<label for="select" rel="req">select</label><select id="select" name="select" class="req">
+        <option>Thanks for selecting something here</option>
+        <option>Luke</option>
+        <option>Yoda</option>
+        <option>r2d2</option>
+</select><br />
+
+<label for="selectmultiple" rel="req">select multiple</label>
+<select id="selectmultiple" name="selectmultiple" class="req" multiple="multiple">
+        <option>One</option>
+        <option>Two</option>
+        <option>Three</option>
+</select><br />
+  <input name="submit" id="submit" type="submit" value="submit" />
+</form>
+</body>
+</html>
