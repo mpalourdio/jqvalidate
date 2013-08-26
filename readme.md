@@ -7,4 +7,8 @@ Quick and dirty jquery plugin that check if form fields are filled, checked, sel
     specify 'class=req' to the form elements you want to be checked by the plugin
     specify 'rel="req"' to the labels of the elements for automatic '*' adding
 
-$(document).ready(function() { $("#myformid").jqvalidateform({ messageforrequire : "omgwtfbbq!" // optionnal message }); });
+$(document).ready(function() { 
+    $("#myformid").jqvalidateform({ 
+        messageforrequire : "omgwtfbbq!" // optionnal message 
+    }); 
+});
