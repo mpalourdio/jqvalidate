@@ -13,23 +13,23 @@
         var settings = $.extend({}, defaults, options);
    
         $('label[rel="req"]', $(this)).each(function() {
-            //on concatène une astérisque à droite du label
-            $(this).append('<span style="color:red"> *</span>');
+            //on concatÃ¨ne une astÃ©risque Ã  droite du label
+            $(this).append('<span class="asterisk"> *</span>');
         });
-        //pour chaque champ qui contient la classe "req" on test si il est renseigné,coché, selecté etc.
+        //pour chaque champ qui contient la classe "req" on test si il est renseignÃ©,cochÃ©, selectÃ© etc.
         //sur le submit
         $(this).submit(function() {    
             var returnbool = true;
-            //on delete tous les avertissements précedénts
+            //on delete tous les avertissements prï¿½cedï¿½nts
             $($('#'+$(this).attr('id')+'>span[rel="messageforrequire"]')).remove();
             var arr_chekradio = new Array();
             //message d'alerte qui apparait au submit
-            var messageforrequire = '<span style="color:blue;margin-left:5px;" rel="messageforrequire"> '+settings.messageforrequire+' </span>';
+            var messageforrequire = '<span class="message" rel="messageforrequire"> '+settings.messageforrequire+' </span>';
             $('.req', $(this)).each(function() {
                 //input text / textarea / password
                 if($(this).attr("type")=="text" || $(this).attr("type")=="password" || $(this).get(0).tagName.toLowerCase()=="textarea")
                 {
-                    //on ajoute un handler sur les champs après submit pour supprimer le messageforrequire et le border .error
+                    //on ajoute un handler sur les champs aprÃ¨s submit pour supprimer le messageforrequire et le border .error
                     $(this).bind('keyup focusout',function() {
                         if($.trim($(this).val())!="")
                         {
@@ -43,7 +43,7 @@
                             $(this).addClass('error');
                         }
                     });
-                    //si au submit le champ n'est pas renseigné
+                    //si au submit le champ n'est pas renseignÃ©
                     if($.trim($(this).val())=="")
                     {
                         $(messageforrequire).insertAfter($(this));
